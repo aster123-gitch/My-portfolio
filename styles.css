@@ -36,6 +36,20 @@ body {
     padding: 20px;
 }
 
+/* Menu Bar */
+.menu-bar {
+    position: relative;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
 /* Header */
 .site-header {
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -48,7 +62,6 @@ body {
     gap: var(--gap);
 }
 
-/* Brand */
 .brand h1 {
     font-size: 20px;
 }
@@ -56,14 +69,6 @@ body {
 .owner {
     font-size: 13px;
     color: var(--muted);
-}
-
-/*  HAMBURGER BUTTON (NEW) */
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    cursor: pointer;
-    margin-left: auto;
 }
 
 /* Navigation */
@@ -178,7 +183,6 @@ body {
 
 /* Mobile */
 @media (max-width: 600px) {
-
     .container {
         padding: 12px;
     }
@@ -187,24 +191,8 @@ body {
         font-size: 20px;
     }
 
-    /*  SHOW hamburger */
-    .menu-toggle {
-        display: block;
-    }
-
-    /*  HIDE menu by default */
     .nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: rgba(0,0,0,0.9);
-        padding: 10px;
-        margin-top: 10px;
-    }
-
-    /*  SHOW when clicked */
-    .nav.active {
-        display: flex;
+        display: none; /* you can replace with hamburger menu later */
     }
 
     .btn {
