@@ -1,5 +1,5 @@
 :root {
-    --bg: #00000000;
+    --bg: transparent;
     --card: rgba(0, 0, 0, 0.4);
     --accent: #4da3ff;
     --muted: rgba(255, 255, 255, 0.7);
@@ -36,20 +36,6 @@ body {
     padding: 20px;
 }
 
-/* Menu Bar */
-.menu-bar {
-    position: relative;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 10px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
 /* Header */
 .site-header {
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -57,11 +43,13 @@ body {
 
 .site-header .container {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: var(--gap);
 }
 
+/* Brand */
 .brand h1 {
     font-size: 20px;
 }
@@ -71,9 +59,15 @@ body {
     color: var(--muted);
 }
 
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
 /* Navigation */
 .nav {
-    margin-left: auto;
     display: flex;
     gap: 10px;
 }
@@ -90,7 +84,7 @@ body {
     color: #fff;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
     display: grid;
     grid-template-columns: 1fr 300px;
@@ -135,7 +129,7 @@ body {
     border: 1px solid #fff;
 }
 
-/* Grid Section */
+/* Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -163,7 +157,7 @@ body {
     color: var(--muted);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ========== RESPONSIVE ========== */
 
 /* Tablet */
 @media (max-width: 900px) {
@@ -174,25 +168,30 @@ body {
     .grid {
         grid-template-columns: 1fr;
     }
-
-    .nav {
-        width: 100%;
-        justify-content: center;
-    }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
-    .container {
-        padding: 12px;
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .nav.active {
+        display: flex;
     }
 
     .hero h2 {
         font-size: 20px;
-    }
-
-    .nav {
-        display: none; /* you can replace with hamburger menu later */
     }
 
     .btn {
