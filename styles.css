@@ -218,3 +218,27 @@ s .brand h1 {
         font-size: 20px;
     }
 }
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav {
+    display: flex;
+  }
+}
